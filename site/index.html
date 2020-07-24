@@ -5,6 +5,25 @@
 	<title>Document</title>
 </head>
 <body>
-	<h1>Hello coursera!!!!!!!!!!  second change!</h1>
+	<h1>Hello coursera!!</h1>
+	<h2>This is first time I make a real website.</h2>
+<p id="demo">按這個按鈕,讓我得知你的座標：</p>
+<button onclick="getLocation()">試看看</button>
+<script>
+var x=document.getElementById("demo");
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showPosition);
+    }
+  else{x.innerHTML="Geolocation is not supported by this browser.";}
+  }
+function showPosition(position)
+  {
+  x.innerHTML="Latitude: " + position.coords.latitude + 
+  "<br />Longitude: " + position.coords.longitude;	
+  }
+</script>
 </body>
 </html>
